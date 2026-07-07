@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Stadium — Crowd Control Room</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      Smart Stadium <span class="brand-sub">Crowd Control Room · FIFA World Cup 2026</span>
+    </div>
+    <div class="live-indicator" id="live-indicator">
+      <span class="pulse"></span> Live
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel zones-panel">
+      <h2>Zone Occupancy</h2>
+      <div id="zone-grid" class="zone-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="panel alerts-panel">
+      <h2>AI Advisories</h2>
+      <div id="alerts-list" class="alerts-list" aria-live="polite">
+        <p class="empty-state">No active advisories. Monitoring…</p>
+      </div>
+    </section>
+
+    <section class="panel assistant-panel">
+      <h2>Control Room Assistant</h2>
+      <div id="chat-log" class="chat-log" aria-live="polite">
+        <div class="chat-msg assistant">
+          Hi, I'm your crowd-management assistant. Ask me about any gate, concourse, or overall stadium status.
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <label for="chat-input" class="sr-only">Ask the assistant</label>
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="e.g. Is Gate 3 safe to keep open?"
+          autocomplete="off"
+        />
+        <button type="submit">Ask</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
